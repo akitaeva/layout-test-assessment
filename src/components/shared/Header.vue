@@ -42,12 +42,14 @@ export default {
 <style scoped lang="less">
 .top-bar {
   height: 3rem;
-  width: 100%;
-  max-width: 60rem;
-  margin: 0 auto;
+  width: 90vw;
+  max-width: 82rem;
+  margin: 0 10vw;
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: 10;
 }
 
 .nav-links {
@@ -69,11 +71,10 @@ export default {
 .menu-bars {
   max-height: 3rem;
   max-width: 3rem;
-  margin-right: 1.5rem;
 
   img {
     height: 90%;
-  }  
+  }
 
   @media screen and (min-width: 834px) {
     display: none;

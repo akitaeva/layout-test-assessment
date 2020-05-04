@@ -48,5 +48,5 @@ export default {
   width: 100%;
   background-color: #000;
   margin-bottom: 5rem;
-}
+}  
 </style>

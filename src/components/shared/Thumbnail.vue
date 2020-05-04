@@ -7,8 +7,10 @@
       <p class="tagline">{{ tagline }}</p>
       <h3 class="heading">{{ heading }}</h3>
       <a href="/">
-        See more
-        <img :src="forward" />
+        <div class="page-link">
+          See more
+          <img :src="forward" />
+        </div>
       </a>
     </div>
   </div>
@@ -40,7 +42,7 @@ export default {
 .list-item {
   max-height: 27rem;
   width: 80rem;
-  max-width: 80vw;
+  max-width: 75vw;
   margin: 0 auto;
   padding: 2rem 0;
   display: flex;
@@ -49,16 +51,27 @@ export default {
     &:nth-child(2) {
       flex-direction: row-reverse;
     }
+
+    &:nth-child(1) {
+      margin-top: -8rem;
+    }
   }
 
   @media screen and (max-width: 1024px) {
     margin: 0 5%;
+  }
+
+  @media screen and (max-width: 624px) {
+    flex-direction: column;
+    margin: 0 auto;
   }
 }
 
 .image {
   max-width: 65%;
   max-height: 100%;
+  z-index: 10;
+  position: relative;
 
   img {
     width: 100%;
@@ -68,6 +81,24 @@ export default {
 
   @media screen and (max-width: 834px) {
     max-width: 45%;
+  }
+
+  @media screen and (max-width: 624px) {
+    max-width: 80%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
 }
 
@@ -81,9 +112,15 @@ export default {
   margin-bottom: auto;
   margin-left: -5rem;
   text-align: left;
+  z-index: 10;
 
   @media screen and (max-width: 834px) {
     margin-left: 1rem;
+  }
+
+  @media screen and (max-width: 624px) {
+    margin-left: 0;
+    margin-top: 1rem;
   }
 }
 
@@ -91,6 +128,10 @@ export default {
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
+
+  @media screen and (max-width: 834px) {
+    font-size: 0.8rem;
+  }
 }
 
 .heading {
@@ -114,5 +155,19 @@ a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+
+  @media screen and (max-width: 834px) {
+    font-size: 0.8rem;
+  }
+}
+
+.page-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    margin-left: 0.5rem;
+  }
 }
 </style>
