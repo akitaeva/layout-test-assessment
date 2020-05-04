@@ -2,8 +2,8 @@
   <div class="hero">
     <div class="hero-content">
       <h1 class="heading">Lorem ipsum dolor sit amet</h1>
-      <h4>Bibendum est ultricies integer quis.</h4>
-      <p>
+      <h4 class="subheading">Bibendum est ultricies integer quis.</h4>
+      <p class="hero-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Bibendum est
         ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris
@@ -23,6 +23,10 @@
   min-height: 100%;
   position: relative;
   text-align: left;
+
+  @media screen and (max-width: 834px) {
+    height: 70vh;
+  }
 }
 
 &::before {
@@ -39,14 +43,30 @@
 }
 
 .hero-content {
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 20rem auto 0;
+  color: #fff;
+
+  @media screen and (max-width: 1280px) {
+    margin: 12rem 8% 0;
+  }
 }
 
 .heading {
-  color: #fff;
   font-size: 4rem;
   font-weight: 800;
   letter-spacing: -0.25rem;
+
+  @media screen and (max-width: 834px) {
+    font-size: 3rem;
+  }
+}
+
+.hero-text {
+  margin-top: 2rem;
+
+  @media screen and (max-width: 834px) {
+    font-size: 0.75rem;
+  }
 }
 </style>

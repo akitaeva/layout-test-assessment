@@ -1,7 +1,10 @@
 <template>
   <div class="top-bar">
     <div class="logo">
-      <img src="@/assets/logo.png" />
+      <img src="@/assets/logo.png" alt="Logo" />
+    </div>
+    <div class="menu-bars">
+      <img :src="menuBars" alt="menu" />
     </div>
     <div class="nav-links">
       <a href="/">
@@ -23,6 +26,19 @@
   </div>
 </template>
 
+<script>
+import menuBars from "@/assets/icons/menu-bars-outline.png";
+
+export default {
+  name: "Thumbnail",
+  data() {
+    return {
+      menuBars: menuBars
+    };
+  }
+};
+</script>
+
 <style scoped lang="less">
 .top-bar {
   height: 3rem;
@@ -32,13 +48,36 @@
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
-  background: transparant;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
   width: 28rem;
+  margin-right: 1.5rem;
+
+  @media screen and (max-width: 833px) {
+    display: none;
+  }
+}
+
+.logo {
+  max-height: 3rem;
+  margin-left: 1.5rem;
+}
+
+.menu-bars {
+  max-height: 3rem;
+  max-width: 3rem;
+  margin-right: 1.5rem;
+
+  img {
+    height: 90%;
+  }  
+
+  @media screen and (min-width: 834px) {
+    display: none;
+  }
 }
 
 a {
