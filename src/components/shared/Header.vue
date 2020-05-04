@@ -71,6 +71,7 @@ export default {
 .menu-bars {
   max-height: 3rem;
   max-width: 3rem;
+  margin-right: 1.5rem;
 
   img {
     height: 90%;

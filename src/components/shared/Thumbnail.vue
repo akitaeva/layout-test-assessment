@@ -57,10 +57,6 @@ export default {
     }
   }
 
-  @media screen and (max-width: 1024px) {
-    margin: 0 5%;
-  }
-
   @media screen and (max-width: 624px) {
     flex-direction: column;
     margin: 0 auto;
@@ -77,6 +73,10 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+    @media screen and (max-width: 1024px) {
+    max-width: 80%;
   }
 
   @media screen and (max-width: 834px) {
@@ -114,6 +114,10 @@ export default {
   text-align: left;
   z-index: 10;
 
+  @media screen and (max-width: 1024px) {
+    max-width: 85%;
+  }
+
   @media screen and (max-width: 834px) {
     margin-left: 1rem;
   }
@@ -141,7 +145,7 @@ export default {
   letter-spacing: -0.25rem;
 
   @media screen and (max-width: 1024px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   @media screen and (max-width: 834px) {
